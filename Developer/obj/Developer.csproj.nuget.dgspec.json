@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nkkun\\source\\repos\\ApplicationForKomodo\\Developer\\Developer.csproj": {}
+    "C:\\Eleven Fifty Projects\\ApplicationForKomodo\\Developer\\Developer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nkkun\\source\\repos\\ApplicationForKomodo\\Developer\\Developer.csproj": {
+    "C:\\Eleven Fifty Projects\\ApplicationForKomodo\\Developer\\Developer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nkkun\\source\\repos\\ApplicationForKomodo\\Developer\\Developer.csproj",
-        "projectName": "Developer",
-        "projectPath": "C:\\Users\\nkkun\\source\\repos\\ApplicationForKomodo\\Developer\\Developer.csproj",
+        "projectUniqueName": "C:\\Eleven Fifty Projects\\ApplicationForKomodo\\Developer\\Developer.csproj",
+        "projectName": "DeveloperLibrary",
+        "projectPath": "C:\\Eleven Fifty Projects\\ApplicationForKomodo\\Developer\\Developer.csproj",
         "packagesPath": "C:\\Users\\nkkun\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nkkun\\source\\repos\\ApplicationForKomodo\\Developer\\obj\\",
+        "outputPath": "C:\\Eleven Fifty Projects\\ApplicationForKomodo\\Developer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
