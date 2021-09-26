@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Developer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -74,11 +75,89 @@ namespace ApplicationKomodo
         {
             Console.Clear();
 
+            Developers developer = new Developers();
+
+            //Name
+            Console.WriteLine("Please enter first and last name of user");
+            developer.Name = Console.ReadLine();
+
+            //User ID
+            Console.WriteLine("Please enter user's ID");
+            developer.IDNum = Console.ReadLine();
+
+            //User's Team
+            Console.WriteLine("Please enter user's assigned team");
+            developer.TeamName = Console.ReadLine();
+
+            //Pluralsight Access         ////Find a fix////
+            Console.WriteLine("Please enter 'true' or 'false' for user's Pluralsight access ");
             
+
+            _repo.AddDeveloperToDirectory(developer);
+
         }
+
+        //Retreive all users
+
+        private void ShowAllUsers()
+        {
+            Console.Clear();
+
+            List<Developers> listOfDevelopers = _repo.GetDevelopers();
+
+            foreach(Developers developer in listOfDevelopers)
+            {
+                //add helper method
+            }
+
+            Console.WriteLine("Press any key to continue");
+            Console.ReadKey();
+        }
+
+        //Retrieving specific user (by Name)
+        private void ShowUserByName()
+        {
+            Console.Clear();
+
+            Console.WriteLine("Which User are you looking for?");
+            string name = Console.ReadLine();
+
+            Developers developer = _repo.GetDeveloperByName(name);
+            //verify that user/developer is in repository
+            //Using helper method
+            //add helper method
+            Console.WriteLine("Press any key to continue");
+            Console.ReadKey();
+
+        }
+        //Update Content
+
+        //Delete content
+
+        //Helper Methods
+        private void DisplayDeveloper(Developers developer)
+        {
+            Console.WriteLine(
+                $"Name: { developer.Name}\n" +
+                $"UserID { developer.IDNum}\n" +
+                $"UserTeam: { developer.TeamName}\n" +
+                $"Pluralsight Access { developer.Pluralsight}\n\n");
+        }
+        //Exit
+        
+        //Preset Users
         private void SeedData()
         {
-            Developer      
+            Developers JaneDoe = new Developers("Jane Doe", "52000001", "UX Team", false);
+            Developers MikeByrne = new Developers("Mike Byrne", "52000002", "UX Team", true);
+            Developers AlexKunts = new Developers("Alex Kunts", "52000003", "Developer Team", false);
+            Developers SamAnderson = new Developers("Sam Anderson", "52000004", "Developer Team", false);
+
+            _repo.AddDeveloperToDirectory(JaneDoe);
+            _repo.AddDeveloperToDirectory(MikeByrne);
+            _repo.AddDeveloperToDirectory(AlexKunts);
+            _repo.AddDeveloperToDirectory(SamAnderson);
         }
     }
 }
+

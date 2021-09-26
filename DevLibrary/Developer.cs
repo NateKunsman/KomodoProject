@@ -1,11 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Developer
 {
-    public class Developer
+    public class Developers
     {
-        public Developer() { }
-        public Developer(string name, string idNum, string teamName, bool pluralsight)
+        public Developers() { }
+        public Developers(string name, string idNum, string teamName, bool pluralsight)
         {
             Name = name;
             IDNum = idNum;

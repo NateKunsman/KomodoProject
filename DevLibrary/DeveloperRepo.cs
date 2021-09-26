@@ -13,10 +13,10 @@ namespace Developer
         //Delete
     public class DeveloperRepo
     {
-        private readonly List<Developer> _developerDirectory = new List<Developer>();
+        private readonly List<Developers> _developerDirectory = new List<Developers>();
 
         //Create
-        public bool AddDeveloperToDirectory(Developer developer)
+        public bool AddDeveloperToDirectory(Developers developer)
         {
             int startingCount = _developerDirectory.Count;
 
@@ -27,15 +27,15 @@ namespace Developer
         }
 
         //Read (GET)
-        public List<Developer> GetDevelopers()
+        public List<Developers> GetDevelopers()
         {
             return _developerDirectory;
         }
 
         //Get By Employee Name
-        public Developer GetDeveloperByName(string theDeveloperYouAreLookingFor)
+        public Developers GetDeveloperByName(string theDeveloperYouAreLookingFor)
         {
-            foreach (Developer developer in _developerDirectory)
+            foreach (Developers developer in _developerDirectory)
             {
                 if (developer.Name.ToLower() == theDeveloperYouAreLookingFor.ToLower())
                 {
@@ -46,7 +46,7 @@ namespace Developer
         }
 
         //Update
-        public bool UpdateExistingDeveloper(Developer existingDeveloper, Developer newDeveloper)
+        public bool UpdateExistingDeveloper(Developers existingDeveloper, Developers newDeveloper)
         {
             if (existingDeveloper != null)
             {
@@ -63,7 +63,7 @@ namespace Developer
         }
 
         //Delete
-        public bool DeleteDeveloper(Developer existingDeveloper)
+        public bool DeleteDeveloper(Developers existingDeveloper)
         {
             bool result = _developerDirectory.Remove(existingDeveloper);
             return result;
