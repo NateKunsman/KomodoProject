@@ -116,15 +116,19 @@ namespace ApplicationKomodo
         private void ShowAllUsers()
         {
             Console.Clear();
+            Console.WriteLine("This is a list of all develepers\n" +
+                                "You are currently at the top of the list\n" +
+                                "Scroll down to be sure there aren't more developers\n" +
+                                "Press any key to return to menu");
 
             List<Developers> listOfDevelopers = _repo.GetDevelopers();
 
             foreach(Developers developer in listOfDevelopers)
             {
-                //add helper method
+                DisplayDeveloper(developer);
             }
 
-            Console.WriteLine("Press any key to continue");
+            Console.WriteLine("Press any key to return to menu");
             Console.ReadKey();
         }
 
@@ -133,14 +137,14 @@ namespace ApplicationKomodo
         {
             Console.Clear();
 
-            Console.WriteLine("Which User are you looking for?");
+            Console.WriteLine("Typer developers full name with a space between the first and last name");
             string name = Console.ReadLine();
 
             Developers developer = _repo.GetDeveloperByName(name);
             //verify that user/developer is in repository
             //Using helper method
-            //add helper method
-            Console.WriteLine("Press any key to continue");
+            DisplayDeveloper(developer);
+            Console.WriteLine("Press any key to return to menu");
             Console.ReadKey();
 
         }
@@ -151,9 +155,9 @@ namespace ApplicationKomodo
             Console.Clear();
             Console.WriteLine("Here are developers still needing a Pluralsight license");
 
-            List<Developers> allDevelopers = _repo.GetDevelopers();
+            List<Developers> listOfDevelopers = _repo.GetDevelopers();
             bool needLicense = false;
-            foreach (Developers developer in allDevelopers)
+            foreach (Developers developer in listOfDevelopers)
             {
                 if (developer.Pluralsight == false)
                 {
@@ -188,9 +192,9 @@ namespace ApplicationKomodo
         {
             Console.WriteLine(
                 $"Name: { developer.Name}\n" +
-                $"UserID { developer.IDNum}\n" +
+                $"UserID: { developer.IDNum}\n" +
                 $"UserTeam: { developer.TeamName}\n" +
-                $"Pluralsight Access { developer.Pluralsight}\n\n");
+                $"Pluralsight Access: { developer.Pluralsight}\n\n");
         }
         //Exit
         
