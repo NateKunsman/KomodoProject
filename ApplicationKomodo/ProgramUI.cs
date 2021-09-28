@@ -30,12 +30,13 @@ namespace ApplicationKomodo
                 Console.WriteLine
                     (
                     "Enter the number of your selection: \n" +
-                    "1. Create new user" +
-                    "2. Show all users" +
-                    "3. Find user by name" +
-                    "4. Update user info" +
-                    "5. Delete user" +
-                    "6. Exit"
+                    "1. Create new user\n" +
+                    "2. Show all users\n" +
+                    "3. Find user by name\n" +
+                    "4. Update user info\n" +
+                    "5. Delete user\n" +
+                    "6. Show Users needing Pluralsight access\n" +
+                    "0. Exit"
                     );
                 string userInput = Console.ReadLine();
 
@@ -43,12 +44,15 @@ namespace ApplicationKomodo
                 {
                     case "1":
                         //Creates new user/developer
+                        CreateNewDeveloper();
                         break;
                     case "2":
                         //Show all users/developers
+                        ShowAllUsers();
                         break;
                     case "3":
                         //Show user/developer by name
+                        ShowUserByName();
                         break;
                     case "4":
                         //Update user/developer
@@ -57,6 +61,10 @@ namespace ApplicationKomodo
                         //Delete user/developer
                         break;
                     case "6":
+                        //Users Needing Pluralsight
+                        ShowAllDevelopersWithoutPluralsight();
+                        break;
+                    case "0":
                         isRunning = false;
                         //Exit
                         break;
@@ -78,19 +86,25 @@ namespace ApplicationKomodo
             Developers developer = new Developers();
 
             //Name
-            Console.WriteLine("Please enter first and last name of user");
+            Console.WriteLine("Please enter first and last name of user with space inbetween\n" +
+                "Press Enter when complete");
             developer.Name = Console.ReadLine();
 
             //User ID
-            Console.WriteLine("Please enter user's ID");
+            Console.WriteLine("Please enter user's ID\n" +
+                "Press Enter when complete");
             developer.IDNum = Console.ReadLine();
 
             //User's Team
-            Console.WriteLine("Please enter user's assigned team");
+            Console.WriteLine("Please enter user's assigned team\n" +
+                "Press Enter when complete");
             developer.TeamName = Console.ReadLine();
 
             //Pluralsight Access         ////Find a fix////
-            Console.WriteLine("Please enter 'true' or 'false' for user's Pluralsight access ");
+            Console.WriteLine("Please enter 'true' or 'false' for user's Pluralsight access\n" +
+                "Press Enter when complete");
+            string userInput = Console.ReadLine().ToLower();
+            
             
 
             _repo.AddDeveloperToDirectory(developer);
@@ -130,9 +144,44 @@ namespace ApplicationKomodo
             Console.ReadKey();
 
         }
+
+        //Retreive Users needing Pluralsight license
+        private void UsersNeedingPluralsightLicense()
+        {
+            Console.Clear();
+            Console.WriteLine("Here are developers still needing a Pluralsight license");
+
+            List<Developers> allDevelopers = _repo.GetDevelopers();
+            bool needLicense = false;
+            foreach (Developers developer in allDevelopers)
+            {
+                if (developer.Pluralsight == false)
+                {
+                    Console.WriteLine($"{needLicense}. Name: {developer.Name}\n" +
+                        $" ID: {developer.IDNum}\n\n");
+                }
+            }
+        }
+
         //Update Content
 
         //Delete content
+
+        //Access to Pluralsight
+        private void ShowAllDevelopersWithoutPluralsight()
+        {
+            Console.Clear();
+            Console.WriteLine();
+            List<Developers> listOfDevelopers = _repo.GetDevelopers();
+
+            foreach(Developers developer in listOfDevelopers)
+            {
+                if(developer.Pluralsight == false)
+                {
+                    DisplayDeveloper(developer);
+                }
+            }
+        }
 
         //Helper Methods
         private void DisplayDeveloper(Developers developer)

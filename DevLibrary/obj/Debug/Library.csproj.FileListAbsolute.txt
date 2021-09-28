@@ -1,0 +1,6 @@
+C:\Eleven Fifty Projects\ApplicationForKomodo\DevLibrary\bin\Debug\Library.dll
+C:\Eleven Fifty Projects\ApplicationForKomodo\DevLibrary\bin\Debug\Library.pdb
+C:\Eleven Fifty Projects\ApplicationForKomodo\DevLibrary\obj\Debug\Library.csproj.AssemblyReference.cache
+C:\Eleven Fifty Projects\ApplicationForKomodo\DevLibrary\obj\Debug\Library.csproj.CoreCompileInputs.cache
+C:\Eleven Fifty Projects\ApplicationForKomodo\DevLibrary\obj\Debug\Library.dll
+C:\Eleven Fifty Projects\ApplicationForKomodo\DevLibrary\obj\Debug\Library.pdb
