@@ -167,9 +167,19 @@ namespace ApplicationKomodo
             }
         }
 
-        //Update Content
+        //Update User
+        private void UpdateDeveloper()
+        {
+            Console.Clear();
+            Console.WriteLine("Please Enter Developers Unique 8 digit ID");
 
-        //Delete content
+
+
+
+
+        }
+
+        //Delete User
 
         //Access to Pluralsight
         private void ShowAllDevelopersWithoutPluralsight()
